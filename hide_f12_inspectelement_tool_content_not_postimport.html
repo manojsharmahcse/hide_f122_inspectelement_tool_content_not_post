@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>hide_f12_inspectelement_tool_content_not_postimport</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+    if (document.layers) {
+        //Capture the MouseDown event.
+        document.captureEvents(Event.MOUSEDOWN);
+
+        //Disable the OnMouseDown event handler.
+        document.onmousedown = function () {
+            return false;
+        };
+    }
+    else {
+        //Disable the OnMouseUp event handler.
+        document.onmouseup = function (e) {
+            if (e != null && e.type == "mouseup") {
+                //Check the Mouse Button which is clicked.
+                if (e.which == 2 || e.which == 3) {
+                    //If the Button is middle or right then disable.
+                    return false;
+                }
+            }
+        };
+    }
+
+    //Disable the Context Menu event.
+    document.oncontextmenu = function () {
+        return false;
+    };
+
+    document.onkeydown = ShowKeyCode;
+    function ShowKeyCode(evt) {
+        if (evt.keyCode == '123')
+            return false;
+        //For F12 Button 
+    }
+</script>
+
+	</head>
+	<body  onload="noBack();" onpageshow="if (event.persisted) noBack();" oncut="return false" ;="" oncopy="return false" onpaste="return false">
+	
+		
+		<h1>Hide </h1>
+		<h3>f12</h3>
+		<h3>inspect element tool</h3>
+		<h3>content not copy</h3>
+
+
+		<h2>Example website : https://hpsssb.hp.gov.in/</h2>
+		
+		
+						
+			
+	</body>
+</html>
